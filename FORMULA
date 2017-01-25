@@ -1,0 +1,8 @@
+name: storm
+os: Debian
+os_family: Debian
+version: 201701
+release: 1
+summary: Formula for installing and configuring Apache Storm
+description: Formula for installing and configuring Apache Storm
+top_level_dir: storm

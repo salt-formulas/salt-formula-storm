@@ -1,0 +1,13 @@
+applications:
+- storm
+classes:
+- service.storm.support
+parameters:
+  storm:
+    server:
+      bind:
+        address: 0.0.0.0
+      members:
+      - host: ${_param:cluster_node01_address}
+      - host: ${_param:cluster_node02_address}
+      - host: ${_param:cluster_node03_address}

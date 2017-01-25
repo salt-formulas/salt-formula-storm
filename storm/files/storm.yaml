@@ -1,0 +1,11 @@
+{%- from "storm/map.jinja" import server with context -%}
+{%- set zookeeper = salt['pillar.get']('zookeeper:server') -%}
+
+storm.zookeeper.servers:
+  {%- for member in zookeeper.members %}
+  - "{{ member.host }}"
+  {%- endfor %}
+
+storm.local.dir: "/opt/storm/local"
+nimbus.seeds: [{%- for member in server.members %}"{{ member.host }}"{%- if not loop.last -%},{%- endif -%}{%- endfor %}]
+storm.local.hostname: "{{ server.bind.address }}"

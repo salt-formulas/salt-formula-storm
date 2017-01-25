@@ -1,0 +1,11 @@
+applications:
+- storm
+classes:
+- service.storm.support
+parameters:
+  storm:
+    server:
+      bind:
+        address: ${_param:single_address}
+      members:
+        - host: ${_param:single_address}
