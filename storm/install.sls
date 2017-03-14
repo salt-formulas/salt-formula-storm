@@ -44,10 +44,11 @@ permissions_storm_home:
     - user: user_storm
 
 storm_local_dir:
-  file.managed:
+  file.directory:
   - name: {{ server.storm_real_home }}/local
   - user: storm
   - group: storm
+  - mode: 755
   - require:
     - file: permissions_storm_home
 
