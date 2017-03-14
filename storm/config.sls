@@ -6,5 +6,5 @@ storm_config:
   - source: salt://storm/files/storm.yaml
   - user: storm
   - group: storm
-  - mode: 640
+  - mode: 644
   - template: jinja
